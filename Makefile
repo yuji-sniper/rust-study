@@ -1,5 +1,5 @@
 down:
 	docker compose down
 
-app:
+shell:
 	docker compose exec app bash
