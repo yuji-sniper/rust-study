@@ -1,3 +1,3 @@
-pub fn func_b() {
-    println!("func b called!");
-}
+// pub fn func_b() {
+//     println!("func b called!");
+// }
