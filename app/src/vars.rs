@@ -67,12 +67,32 @@ pub fn run() {
     // println!("a2[3] = {}", a2[3]);
 
     // 文字列スライス
-    let s1 = "Helloこんにちは"; // 20 bytes
-    let s2 = "hello"; // 5 bytes
-    println!("Stack address of s1: {:p}", &s1);
+    // let s1 = "Helloこんにちは"; // 20 bytes
+    // let s2 = "hello"; // 5 bytes
+    // println!("Stack address of s1: {:p}", &s1); // 静的領域のポインタと長さの情報が格納されている
+    // println!("Stack address of s2: {:p}", &s2);
+    // println!("Static memory address of s1: {:p}", s1.as_ptr());
+    // println!("Static memory address of s2: {:p}", s2.as_ptr());
+    // println!("Length of s1: {}", s1.len());
+    // println!("Length of s2: {}", s2.len());
+
+    // String
+    let mut s1 = String::from("hello");
+    let mut s2 = String::from("こんにちは");
+    println!("Stack address of s1: {:p}", &s1); // ヒープ領域のポインタ・長さ・容量の情報が格納されている
     println!("Stack address of s2: {:p}", &s2);
-    println!("Static memory address of s1: {:p}", s1.as_ptr());
-    println!("Static memory address of s2: {:p}", s2.as_ptr());
+    println!("Heap memory address of s1: {:p}", s1.as_ptr());
+    println!("Heap memory address of s2: {:p}", s2.as_ptr());
     println!("Length of s1: {}", s1.len());
     println!("Length of s2: {}", s2.len());
+    println!("Capacity of s1: {}", s1.capacity());
+    println!("Capacity of s2: {}", s2.capacity());
+    s1.push_str(", world!");
+    s2.push_str("、世界！");
+    println!("s1 = {}", s1);
+    println!("s2 = {}", s2);
+    println!("Length of s1: {}", s1.len());
+    println!("Length of s2: {}", s2.len());
+    println!("Capacity of s1: {}", s1.capacity());
+    println!("Capacity of s2: {}", s2.capacity());
 }
