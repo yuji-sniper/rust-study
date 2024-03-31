@@ -77,22 +77,22 @@ pub fn run() {
     // println!("Length of s2: {}", s2.len());
 
     // String
-    let mut s1 = String::from("hello");
-    let mut s2 = String::from("こんにちは");
-    println!("Stack address of s1: {:p}", &s1); // ヒープ領域のポインタ・長さ・容量の情報が格納されている
-    println!("Stack address of s2: {:p}", &s2);
-    println!("Heap memory address of s1: {:p}", s1.as_ptr());
-    println!("Heap memory address of s2: {:p}", s2.as_ptr());
-    println!("Length of s1: {}", s1.len());
-    println!("Length of s2: {}", s2.len());
-    println!("Capacity of s1: {}", s1.capacity());
-    println!("Capacity of s2: {}", s2.capacity());
-    s1.push_str(", world!");
-    s2.push_str("、世界！");
-    println!("s1 = {}", s1);
-    println!("s2 = {}", s2);
-    println!("Length of s1: {}", s1.len());
-    println!("Length of s2: {}", s2.len());
-    println!("Capacity of s1: {}", s1.capacity());
-    println!("Capacity of s2: {}", s2.capacity());
+    // let mut s1 = String::from("hello");
+    // let mut s2 = String::from("こんにちは");
+    // println!("Stack address of s1: {:p}", &s1); // ヒープ領域のポインタ・長さ・容量の情報が格納されている
+    // println!("Stack address of s2: {:p}", &s2);
+    // println!("Heap memory address of s1: {:p}", s1.as_ptr());
+    // println!("Heap memory address of s2: {:p}", s2.as_ptr());
+    // println!("Length of s1: {}", s1.len());
+    // println!("Length of s2: {}", s2.len());
+    // println!("Capacity of s1: {}", s1.capacity());
+    // println!("Capacity of s2: {}", s2.capacity());
+    // s1.push_str(", world!");
+    // s2.push_str("、世界！");
+    // println!("s1 = {}", s1);
+    // println!("s2 = {}", s2);
+    // println!("Length of s1: {}", s1.len());
+    // println!("Length of s2: {}", s2.len());
+    // println!("Capacity of s1: {}", s1.capacity());
+    // println!("Capacity of s2: {}", s2.capacity());
 }
