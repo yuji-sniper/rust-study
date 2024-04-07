@@ -18,4 +18,11 @@ pub fn run() {
     println!("{} {}", sl1, sl2); // アドレスは異なるが値は同じ
     println!("Stack address of sl1: {:p}", &sl1);
     println!("Stack address of sl2: {:p}", &sl2);
+
+    // クローン
+    let s3 = String::from("hello");
+    let s4 = s3.clone(); // クローンされる
+    println!("{} {}", s3, s4); // s3とs4は別の所有権を持つ
+    println!("Heap address of s3: {:p}", s3.as_ptr());
+    println!("Heap address of s4: {:p}", s4.as_ptr());
 }
