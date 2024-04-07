@@ -25,4 +25,21 @@ pub fn run() {
     println!("{} {}", s3, s4); // s3とs4は別の所有権を持つ
     println!("Heap address of s3: {:p}", s3.as_ptr());
     println!("Heap address of s4: {:p}", s4.as_ptr());
+
+    // 関数に所有権を渡す
+    let s5 = String::from("hello");
+    println!("Stack address of s5: {:p}", &s5);
+    println!("Heap address of s5: {:p}", s5.as_ptr());
+    println!("Length of s5: {}", s5.len());
+    println!("Capacity of s5: {}", s5.capacity());
+    take_ownership(s5); // s5の所有権が関数に移動する
+    // println!("{}", s5); // s5は所有権を持っていないのでエラーになる
+}
+
+fn take_ownership(s: String) {
+    println!("Stack address of s: {:p}", &s);
+    println!("Heap address of s: {:p}", s.as_ptr()); // ヒープアドレスは同じ
+    println!("Length of s: {}", s.len());
+    println!("Capacity of s: {}", s.capacity());
+    println!("{}", s);
 }
