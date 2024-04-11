@@ -50,6 +50,11 @@ pub fn run() {
     let s8 = String::from("hello");
     let len = calculate_length(&s8); // s8の所有権は関数に移動しない
     println!("The length of '{}' is {}.", s8, len);
+
+    // 可変な参照
+    let mut s9 = String::from("hello");
+    change(&mut s9); // s9の所有権は関数に移動しない
+    println!("{}", s9);
 }
 
 fn take_ownership(s: String) {
@@ -66,4 +71,8 @@ fn take_give_back_ownership(s: String) -> String {
 
 fn calculate_length(s: &String) -> usize {
     s.len()
+}
+
+fn change(s: &mut String) {
+    s.push_str(", world");
 }
