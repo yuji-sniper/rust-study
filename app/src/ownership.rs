@@ -45,6 +45,11 @@ pub fn run() {
     println!("Heap address of s7: {:p}", s7.as_ptr()); // ヒープアドレスは同じ
     println!("Length of s7: {}", s7.len());
     // println!("{}", s6); // s6は所有権を持っていないのでエラーになる
+
+    // 参照を使う
+    let s8 = String::from("hello");
+    let len = calculate_length(&s8); // s8の所有権は関数に移動しない
+    println!("The length of '{}' is {}.", s8, len);
 }
 
 fn take_ownership(s: String) {
@@ -57,4 +62,8 @@ fn take_ownership(s: String) {
 
 fn take_give_back_ownership(s: String) -> String {
     s // 所有権を返す
+}
+
+fn calculate_length(s: &String) -> usize {
+    s.len()
 }
