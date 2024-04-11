@@ -55,6 +55,18 @@ pub fn run() {
     let mut s9 = String::from("hello");
     change(&mut s9); // s9の所有権は関数に移動しない
     println!("{}", s9);
+
+    // 参照のライフタイム
+    let s10 = String::from("hello");
+    let r1 = &s10;
+    let r2 = &s10;
+    println!("{} {} {}", s10, r1, r2);
+
+    // 参照のライフタイム（エラー）
+    // let mut s11 = String::from("hello");
+    // let r3 = &s11; // 不変な参照
+    // let r4 = &mut s11; // 可変な参照
+    // println!("{} {}", r3, r4); // 同時に不変な参照と可変な参照を持つことはできないからエラーになる
 }
 
 fn take_ownership(s: String) {
