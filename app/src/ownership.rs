@@ -82,7 +82,7 @@ pub fn run() {
     let r3 = &mut s12; // 可変な参照
     *r3 = String::from("hello, world"); // 可変な参照を使って値を変更する
     println!("{}", s12);
-    println!("{} {}", r1, r2); // 可変な参照が終了するまで不変な参照は使用できない
+    // println!("{} {}", r1, r2); // 可変な参照が終了するまで不変な参照は使用できない
 }
 
 fn take_ownership(s: String) {
