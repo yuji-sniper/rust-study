@@ -67,6 +67,12 @@ pub fn run() {
     // let r3 = &s11; // 不変な参照
     // let r4 = &mut s11; // 可変な参照
     // println!("{} {}", r3, r4); // 同時に不変な参照と可変な参照を持つことはできないからエラーになる
+
+    // 可変な参照が終了するまで元の変数は使用できない
+    // let mut s11 = String::from("hello");
+    // let r5 = &mut s11; // 可変な参照
+    // println!("{}", s11); // 可変な参照が終了するまでs11は使用できない
+    // println!("{}", r5);
 }
 
 fn take_ownership(s: String) {
